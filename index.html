@@ -1,0 +1,3299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Begum Rokeya University, Rangpur</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        :root {
+            --primary-color: #006837;
+            --secondary-color: #FFD200;
+            --light-color: #f8f9fa;
+            --dark-color: #343a40;
+            --success-color: #28a745;
+            --warning-color: #ffc107;
+            --danger-color: #dc3545;
+            --info-color: #17a2b8;
+        }
+
+        body {
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+        }
+
+        /* Header Styles */
+        .top-header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 8px 0;
+            font-size: 14px;
+        }
+
+        .top-header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            padding: 0 20px;
+        }
+
+        .top-header-links a {
+            color: white;
+            text-decoration: none;
+            margin-left: 15px;
+            transition: color 0.3s;
+            cursor: pointer;
+        }
+
+        .top-header-links a:hover {
+            color: var(--secondary-color);
+        }
+
+        .main-header {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .logo {
+            height: 70px;
+            margin-right: 15px;
+        }
+
+        .university-name {
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--primary-color);
+            line-height: 1.2;
+        }
+
+        .university-name span {
+            font-size: 16px;
+            font-weight: 400;
+            display: block;
+            color: var(--dark-color);
+        }
+
+        .nav-menu ul {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-menu li {
+            margin-left: 20px;
+            position: relative;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: var(--dark-color);
+            font-weight: 600;
+            font-size: 16px;
+            padding: 5px 0;
+            transition: color 0.3s;
+            cursor: pointer;
+        }
+
+        .nav-menu a:hover {
+            color: var(--primary-color);
+        }
+
+        .nav-menu li.active a {
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--primary-color);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 24px;
+            color: var(--primary-color);
+            cursor: pointer;
+        }
+
+        /* Main Content Area */
+        .main-content {
+            min-height: calc(100vh - 400px);
+            padding: 30px 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Section Styles */
+        .section {
+            padding: 60px 20px;
+            display: none;
+        }
+
+        .section.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+            color: var(--primary-color);
+            font-size: 36px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .section-title:after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 3px;
+            background-color: var(--secondary-color);
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 104, 55, 0.8), rgba(0, 104, 55, 0.9)), url('https://images.unsplash.com/photo-1562774053-701939374585?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 100px 20px;
+            text-align: center;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+
+        .hero h1 {
+            font-size: 42px;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 20px;
+            max-width: 800px;
+            margin: 0 auto 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 5px;
+            margin: 10px;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .hero-btn {
+            background-color: var(--secondary-color);
+            color: var(--dark-color);
+        }
+
+        .hero-btn:hover {
+            background-color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        .primary-btn {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .primary-btn:hover {
+            background-color: #004d27;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        /* Home Section */
+        .quick-links {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+
+        .quick-link-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+            cursor: pointer;
+        }
+
+        .quick-link-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+
+        .quick-link-icon {
+            background-color: var(--primary-color);
+            color: white;
+            width: 70px;
+            height: 70px;
+            line-height: 70px;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            font-size: 30px;
+        }
+
+        .quick-link-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        /* About Section */
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .about-text {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .about-image {
+            flex: 1;
+            min-width: 300px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Faculties Section */
+        .faculties-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .faculty-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+            cursor: pointer;
+        }
+
+        .faculty-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+
+        .faculty-icon {
+            background-color: var(--primary-color);
+            color: white;
+            font-size: 40px;
+            height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .faculty-info {
+            padding: 25px;
+        }
+
+        .faculty-info h3 {
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+
+        /* Academics Section */
+        .academics-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .academic-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .academic-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .academic-header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .academic-body {
+            padding: 25px;
+        }
+
+        .academic-list {
+            list-style: none;
+        }
+
+        .academic-list li {
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            align-items: center;
+        }
+
+        .academic-list li:last-child {
+            border-bottom: none;
+        }
+
+        /* Admission Section */
+        .admission-process {
+            background-color: white;
+            border-radius: 10px;
+            padding: 40px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin-bottom: 40px;
+        }
+
+        .process-steps {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 40px;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .step {
+            text-align: center;
+            flex: 1;
+            min-width: 150px;
+            cursor: pointer;
+        }
+
+        .step:hover .step-number {
+            background-color: #004d27;
+            transform: scale(1.1);
+        }
+
+        .step-number {
+            background-color: var(--primary-color);
+            color: white;
+            width: 50px;
+            height: 50px;
+            line-height: 50px;
+            border-radius: 50%;
+            margin: 0 auto 15px;
+            font-weight: bold;
+            font-size: 20px;
+            transition: all 0.3s;
+        }
+
+        /* Admission Form */
+        .form-container {
+            background-color: white;
+            border-radius: 10px;
+            padding: 40px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--dark-color);
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: border 0.3s;
+        }
+
+        .form-control:focus {
+            border-color: var(--primary-color);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(0, 104, 55, 0.1);
+        }
+
+        .form-row {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .form-row .form-group {
+            flex: 1;
+            min-width: 250px;
+        }
+
+        .submit-btn {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 15px 40px;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            display: block;
+            margin: 30px auto 0;
+        }
+
+        .submit-btn:hover {
+            background-color: #004d27;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        /* Research Section */
+        .research-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .research-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            cursor: pointer;
+        }
+
+        .research-img {
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .research-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .research-card:hover .research-img img {
+            transform: scale(1.05);
+        }
+
+        .research-content {
+            padding: 25px;
+        }
+
+        /* News Section */
+        .news-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        .news-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+            cursor: pointer;
+        }
+
+        .news-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+
+        .news-date {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 10px 15px;
+            font-weight: 600;
+            display: inline-block;
+        }
+
+        .news-content {
+            padding: 25px;
+        }
+
+        .news-content h3 {
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+
+        .read-more {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-block;
+            margin-top: 15px;
+            cursor: pointer;
+        }
+
+        /* Contact Section */
+        .contact-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .contact-info {
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 25px;
+        }
+
+        .contact-icon {
+            background-color: var(--primary-color);
+            color: white;
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            border-radius: 50%;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+
+        .map-container {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 60px 20px 30px;
+            margin-top: 60px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-column h3 {
+            color: var(--secondary-color);
+            margin-bottom: 20px;
+            font-size: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-column h3:after {
+            content: '';
+            position: absolute;
+            width: 40px;
+            height: 2px;
+            background-color: var(--primary-color);
+            bottom: 0;
+            left: 0;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: #ddd;
+            text-decoration: none;
+            transition: color 0.3s;
+            cursor: pointer;
+        }
+
+        .footer-links a:hover {
+            color: var(--secondary-color);
+            padding-left: 5px;
+        }
+
+        .contact-info-footer {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 15px;
+            cursor: pointer;
+        }
+
+        .contact-info-footer:hover i {
+            color: var(--secondary-color);
+        }
+
+        .contact-info-footer i {
+            color: var(--secondary-color);
+            margin-right: 10px;
+            margin-top: 5px;
+            transition: color 0.3s;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255,255,255,0.1);
+            color: white;
+            border-radius: 50%;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .social-links a:hover {
+            background-color: var(--primary-color);
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 14px;
+            color: #aaa;
+        }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+            animation: fadeIn 0.3s;
+        }
+
+        .modal.active {
+            display: flex;
+        }
+
+        .modal-content {
+            background-color: white;
+            border-radius: 10px;
+            max-width: 500px;
+            width: 90%;
+            max-height: 80vh;
+            overflow-y: auto;
+            animation: slideIn 0.3s;
+        }
+
+        @keyframes slideIn {
+            from { transform: translateY(-50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        .modal-header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .modal-header h3 {
+            margin: 0;
+        }
+
+        .close-modal {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .close-modal:hover {
+            transform: rotate(90deg);
+        }
+
+        .modal-body {
+            padding: 30px;
+        }
+
+        /* Notification */
+        .notification {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 15px 25px;
+            border-radius: 5px;
+            color: white;
+            font-weight: 600;
+            z-index: 3000;
+            transform: translateX(150%);
+            transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            max-width: 400px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .notification.show {
+            transform: translateX(0);
+        }
+
+        .notification.success {
+            background-color: var(--success-color);
+        }
+
+        .notification.info {
+            background-color: var(--info-color);
+        }
+
+        .notification.warning {
+            background-color: var(--warning-color);
+            color: #333;
+        }
+
+        .notification.error {
+            background-color: var(--danger-color);
+        }
+
+        /* Search Bar */
+        .search-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.9);
+            z-index: 4000;
+            display: none;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .search-bar.active {
+            display: flex;
+            animation: fadeIn 0.3s;
+        }
+
+        .search-container {
+            width: 90%;
+            max-width: 600px;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 20px;
+            font-size: 24px;
+            border: none;
+            border-radius: 10px;
+            background-color: rgba(255,255,255,0.1);
+            color: white;
+            outline: none;
+        }
+
+        .close-search {
+            position: absolute;
+            top: 30px;
+            right: 30px;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 30px;
+            cursor: pointer;
+        }
+
+        /* Progress Bar */
+        .progress-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background-color: transparent;
+            z-index: 1001;
+        }
+
+        .progress-bar {
+            height: 100%;
+            background-color: var(--secondary-color);
+            width: 0%;
+            transition: width 0.3s;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .nav-menu ul {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: white;
+                flex-direction: column;
+                box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+                padding: 20px 0;
+                z-index: 100;
+            }
+            
+            .nav-menu ul.show {
+                display: flex;
+            }
+            
+            .nav-menu li {
+                margin: 0;
+                text-align: center;
+                padding: 10px 0;
+                border-bottom: 1px solid #eee;
+            }
+            
+            .nav-menu li:last-child {
+                border-bottom: none;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .hero h1 {
+                font-size: 32px;
+            }
+            
+            .hero p {
+                font-size: 18px;
+            }
+            
+            .section-title {
+                font-size: 30px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .top-header-container {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .top-header-links {
+                margin-top: 10px;
+            }
+            
+            .section {
+                padding: 40px 15px;
+            }
+            
+            .header-container {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .logo-container {
+                margin-bottom: 15px;
+            }
+            
+            .process-steps {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .step {
+                margin-bottom: 20px;
+            }
+        }
+
+        /* Utility Classes */
+        .text-center {
+            text-align: center;
+        }
+        
+        .mb-20 {
+            margin-bottom: 20px;
+        }
+        
+        .mb-30 {
+            margin-bottom: 30px;
+        }
+        
+        .mt-30 {
+            margin-top: 30px;
+        }
+        
+        .alert {
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        
+        .alert-success {
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+
+        /* Tabs */
+        .tabs {
+            display: flex;
+            border-bottom: 2px solid #eee;
+            margin-bottom: 30px;
+        }
+
+        .tab {
+            padding: 15px 30px;
+            background: none;
+            border: none;
+            font-size: 16px;
+            font-weight: 600;
+            color: #666;
+            cursor: pointer;
+            position: relative;
+            transition: color 0.3s;
+        }
+
+        .tab:hover {
+            color: var(--primary-color);
+        }
+
+        .tab.active {
+            color: var(--primary-color);
+        }
+
+        .tab.active:after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: var(--primary-color);
+        }
+
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.5s;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        /* Table */
+        .table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .table th {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 15px;
+            text-align: left;
+        }
+
+        .table td {
+            padding: 15px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .table tr:hover {
+            background-color: #f8f9fa;
+        }
+    </style>
+</head>
+<body>
+    <!-- Progress Bar -->
+    <div class="progress-container">
+        <div class="progress-bar" id="progressBar"></div>
+    </div>
+
+    <!-- Notification -->
+    <div class="notification" id="notification"></div>
+
+    <!-- Search Bar -->
+    <div class="search-bar" id="searchBar">
+        <button class="close-search" id="closeSearch">&times;</button>
+        <div class="search-container">
+            <input type="text" class="search-input" id="searchInput" placeholder="Search BRUR...">
+            <div id="searchResults" style="color: white; margin-top: 20px;"></div>
+        </div>
+    </div>
+
+    <!-- Top Header -->
+    <div class="top-header">
+        <div class="top-header-container">
+            <div class="top-header-text">
+                <i class="fas fa-phone-alt"></i> +880 521-62730, 62731 | <i class="fas fa-envelope"></i> info@brur.ac.bd
+            </div>
+            <div class="top-header-links">
+                <a id="loginBtn"><i class="fas fa-sign-in-alt"></i> Login</a>
+                <a id="searchBtn"><i class="fas fa-search"></i> Search</a>
+                <a id="themeToggle"><i class="fas fa-moon"></i> Theme</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Header -->
+    <header class="main-header">
+        <div class="header-container">
+            <div class="logo-container" id="logoBtn">
+                <div class="logo-placeholder">
+                    <svg width="70" height="70" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="100" height="100" rx="10" fill="#006837"/>
+                        <circle cx="50" cy="40" r="20" fill="#FFD200"/>
+                        <path d="M30 70 L50 90 L70 70 Z" fill="#FFD200"/>
+                        <text x="50" y="35" text-anchor="middle" fill="#006837" font-weight="bold" font-size="20">BRUR</text>
+                    </svg>
+                </div>
+                <div class="university-name">
+                    Begum Rokeya University, Rangpur
+                    <span>Empowering Through Education</span>
+                </div>
+            </div>
+            
+            <nav class="nav-menu">
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <ul id="navMenu">
+                    <li class="active"><a data-section="home">Home</a></li>
+                    <li><a data-section="about">About</a></li>
+                    <li><a data-section="faculties">Faculties</a></li>
+                    <li><a data-section="academics">Academics</a></li>
+                    <li><a data-section="admission">Admission</a></li>
+                    <li><a data-section="research">Research</a></li>
+                    <li><a data-section="news">News & Events</a></li>
+                    <li><a data-section="contact">Contact</a></li>
+                    <li><a id="campusTourBtn">Virtual Tour</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Home Section -->
+            <section id="home" class="section active">
+                <div class="hero">
+                    <h1>Welcome to Begum Rokeya University</h1>
+                    <p>A premier public university in Rangpur, Bangladesh named after Begum Rokeya, a pioneering feminist writer and social worker.</p>
+                    <button class="btn hero-btn" data-section="admission">Apply Now</button>
+                    <button class="btn hero-btn" id="virtualTourBtn">Virtual Campus Tour</button>
+                    <button class="btn primary-btn" data-section="faculties">Explore Faculties</button>
+                </div>
+
+                <h2 class="section-title">Quick Links</h2>
+                <div class="quick-links">
+                    <div class="quick-link-card" data-section="admission">
+                        <div class="quick-link-icon">
+                            <i class="fas fa-user-graduate"></i>
+                        </div>
+                        <h3>Admission</h3>
+                        <p>Apply for undergraduate and graduate programs</p>
+                        <div class="step-number" style="margin-top: 15px; width: 40px; height: 40px; line-height: 40px;">
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="quick-link-card" data-section="academics">
+                        <div class="quick-link-icon">
+                            <i class="fas fa-book-open"></i>
+                        </div>
+                        <h3>Academics</h3>
+                        <p>Explore programs, courses and academic calendar</p>
+                        <div class="step-number" style="margin-top: 15px; width: 40px; height: 40px; line-height: 40px;">
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="quick-link-card" data-section="faculties">
+                        <div class="quick-link-icon">
+                            <i class="fas fa-university"></i>
+                        </div>
+                        <h3>Faculties</h3>
+                        <p>Discover our six faculties and departments</p>
+                        <div class="step-number" style="margin-top: 15px; width: 40px; height: 40px; line-height: 40px;">
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="quick-link-card" data-section="research">
+                        <div class="quick-link-icon">
+                            <i class="fas fa-flask"></i>
+                        </div>
+                        <h3>Research</h3>
+                        <p>Explore research projects and publications</p>
+                        <div class="step-number" style="margin-top: 15px; width: 40px; height: 40px; line-height: 40px;">
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="quick-link-card" data-section="news">
+                        <div class="quick-link-icon">
+                            <i class="fas fa-calendar-alt"></i>
+                        </div>
+                        <h3>News & Events</h3>
+                        <p>Stay updated with latest happenings</p>
+                        <div class="step-number" style="margin-top: 15px; width: 40px; height: 40px; line-height: 40px;">
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="quick-link-card" id="emergencyBtn">
+                        <div class="quick-link-icon" style="background-color: #dc3545;">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <h3>Emergency</h3>
+                        <p>Emergency contacts and helpline numbers</p>
+                        <div class="step-number" style="margin-top: 15px; width: 40px; height: 40px; line-height: 40px; background-color: #dc3545;">
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Live Updates -->
+                <div class="mt-30" style="background-color: white; padding: 30px; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                    <h3 class="text-center mb-20"><i class="fas fa-bell" style="color: #ffc107;"></i> Live Updates</h3>
+                    <div id="liveUpdates">
+                        <div class="alert" style="background-color: #e7f3ff; border-left: 4px solid #006837;">
+                            <strong><i class="fas fa-info-circle"></i> Admission Test:</strong> Spring 2024 admission test will be held on December 15, 2023
+                        </div>
+                        <div class="alert" style="background-color: #fff3cd; border-left: 4px solid #ffc107;">
+                            <strong><i class="fas fa-exclamation-triangle"></i> Holiday Notice:</strong> University will remain closed on December 16 for Victory Day
+                        </div>
+                        <div class="alert" style="background-color: #d1ecf1; border-left: 4px solid #17a2b8;">
+                            <strong><i class="fas fa-calendar-check"></i> Result Published:</strong> Fall 2023 semester results have been published
+                        </div>
+                    </div>
+                    <button class="btn primary-btn" style="margin-top: 20px;" id="refreshUpdates">
+                        <i class="fas fa-sync-alt"></i> Refresh Updates
+                    </button>
+                </div>
+            </section>
+
+            <!-- About Section -->
+            <section id="about" class="section">
+                <h2 class="section-title">About BRUR</h2>
+                
+                <div class="tabs">
+                    <button class="tab active" data-tab="history">History</button>
+                    <button class="tab" data-tab="vision">Vision & Mission</button>
+                    <button class="tab" data-tab="leadership">Leadership</button>
+                    <button class="tab" data-tab="facts">Key Facts</button>
+                </div>
+                
+                <div class="tab-content active" id="history">
+                    <div class="about-content">
+                        <div class="about-text">
+                            <h3 class="mb-20">Our History</h3>
+                            <p>Begum Rokeya University, Rangpur (BRUR) is a public university in Bangladesh, established in 2008. The university is named after Begum Rokeya, a prominent Bengali feminist thinker, writer, educator and political activist from British India.</p>
+                            <br>
+                            <p>The university started its academic activities with four departments under three faculties. At present, the university has 22 departments under six faculties. The university offers undergraduate and postgraduate programs leading to bachelor's, master's, and PhD degrees.</p>
+                            <br>
+                            <p>The campus is located at Rangpur, a divisional city in northern Bangladesh. The university aims to provide quality education and promote research in various fields of knowledge.</p>
+                            <br>
+                            <button class="btn primary-btn" id="viewTimelineBtn">
+                                <i class="fas fa-history"></i> View Historical Timeline
+                            </button>
+                        </div>
+                        <div class="about-image">
+                            <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="BRUR Campus">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tab-content" id="vision">
+                    <div class="about-content">
+                        <div class="about-text">
+                            <h3 class="mb-20">Our Vision</h3>
+                            <p>To be a center of excellence in higher education, research, and innovation that contributes to the development of the nation and the global community.</p>
+                            <br>
+                            <h3 class="mb-20">Our Mission</h3>
+                            <ul style="list-style: none; padding-left: 20px;">
+                                <li><i class="fas fa-check-circle" style="color: var(--primary-color); margin-right: 10px;"></i> To provide quality education and foster research and innovation</li>
+                                <li><i class="fas fa-check-circle" style="color: var(--primary-color); margin-right: 10px;"></i> To promote critical thinking and develop socially responsible citizens</li>
+                                <li><i class="fas fa-check-circle" style="color: var(--primary-color); margin-right: 10px;"></i> To contribute to sustainable development through knowledge creation</li>
+                                <li><i class="fas fa-check-circle" style="color: var(--primary-color); margin-right: 10px;"></i> To preserve and promote cultural heritage and values</li>
+                            </ul>
+                        </div>
+                        <div class="about-image">
+                            <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="BRUR Vision">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-content" id="leadership">
+                    <div class="about-content">
+                        <div class="about-text">
+                            <h3 class="mb-20">University Leadership</h3>
+                            <div class="faculties-grid">
+                                <div class="faculty-card" id="vcProfile">
+                                    <div class="faculty-icon">
+                                        <i class="fas fa-user-tie"></i>
+                                    </div>
+                                    <div class="faculty-info">
+                                        <h3>Vice Chancellor</h3>
+                                        <p><strong>Prof. Dr. Md. Hasibur Rashid</strong></p>
+                                        <p>Professor of Chemistry</p>
+                                        <button class="btn hero-btn" style="padding: 8px 15px; margin-top: 10px;">
+                                            View Profile
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="faculty-card" id="proVcProfile">
+                                    <div class="faculty-icon">
+                                        <i class="fas fa-user-graduate"></i>
+                                    </div>
+                                    <div class="faculty-info">
+                                        <h3>Pro Vice Chancellor</h3>
+                                        <p><strong>Prof. Dr. Sarwar Jahan</strong></p>
+                                        <p>Professor of English</p>
+                                        <button class="btn hero-btn" style="padding: 8px 15px; margin-top: 10px;">
+                                            View Profile
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-content" id="facts">
+                    <div class="about-content">
+                        <div class="about-text">
+                            <h3 class="mb-20">University at a Glance</h3>
+                            <table class="table">
+                                <tr>
+                                    <td><strong>Established</strong></td>
+                                    <td>2008</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Total Students</strong></td>
+                                    <td>15,000+</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Faculty Members</strong></td>
+                                    <td>450+</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Departments</strong></td>
+                                    <td>22</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Faculties</strong></td>
+                                    <td>6</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Campus Size</strong></td>
+                                    <td>75 acres</td>
+                                </tr>
+                            </table>
+                            <button class="btn primary-btn" id="downloadFactsheet">
+                                <i class="fas fa-download"></i> Download Factsheet
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Faculties Section -->
+            <section id="faculties" class="section">
+                <h2 class="section-title">Our Faculties</h2>
+                
+                <div class="tabs">
+                    <button class="tab active" data-tab="all-faculties">All Faculties</button>
+                    <button class="tab" data-tab="depts">Departments</button>
+                    <button class="tab" data-tab="faculty-stats">Statistics</button>
+                </div>
+                
+                <div class="tab-content active" id="all-faculties">
+                    <div class="faculties-grid">
+                        <div class="faculty-card" onclick="showFacultyModal('science')">
+                            <div class="faculty-icon">
+                                <i class="fas fa-atom"></i>
+                            </div>
+                            <div class="faculty-info">
+                                <h3>Faculty of Science</h3>
+                                <p><strong>Departments:</strong> 6</p>
+                                <p><strong>Dean:</strong> Prof. Dr. Mohammad Ali</p>
+                                <div class="step-number" style="margin-top: 15px; width: 40px; height: 40px; line-height: 40px;">
+                                    <i class="fas fa-arrow-right"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="faculty-card" onclick="showFacultyModal('arts')">
+                            <div class="faculty-icon">
+                                <i class="fas fa-landmark"></i>
+                            </div>
+                            <div class="faculty-info">
+                                <h3>Faculty of Arts</h3>
+                                <p><strong>Departments:</strong> 6</p>
+                                <p><strong>Dean:</strong> Prof. Dr. Fatema Begum</p>
+                                <div class="step-number" style="margin-top: 15px; width: 40px; height: 40px; line-height: 40px;">
+                                    <i class="fas fa-arrow-right"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="faculty-card" onclick="showFacultyModal('business')">
+                            <div class="faculty-icon">
+                                <i class="fas fa-business-time"></i>
+                            </div>
+                            <div class="faculty-info">
+                                <h3>Faculty of Business Studies</h3>
+                                <p><strong>Departments:</strong> 4</p>
+                                <p><strong>Dean:</strong> Prof. Dr. Rahman Khan</p>
+                                <div class="step-number" style="margin-top: 15px; width: 40px; height: 40px; line-height: 40px;">
+                                    <i class="fas fa-arrow-right"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="faculty-card" onclick="showFacultyModal('social')">
+                            <div class="faculty-icon">
+                                <i class="fas fa-gavel"></i>
+                            </div>
+                            <div class="faculty-info">
+                                <h3>Faculty of Social Sciences</h3>
+                                <p><strong>Departments:</strong> 5</p>
+                                <p><strong>Dean:</strong> Prof. Dr. Nasrin Akter</p>
+                                <div class="step-number" style="margin-top: 15px; width: 40px; height: 40px; line-height: 40px;">
+                                    <i class="fas fa-arrow-right"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="faculty-card" onclick="showFacultyModal('life')">
+                            <div class="faculty-icon">
+                                <i class="fas fa-leaf"></i>
+                            </div>
+                            <div class="faculty-info">
+                                <h3>Faculty of Life Science</h3>
+                                <p><strong>Departments:</strong> 4</p>
+                                <p><strong>Dean:</strong> Prof. Dr. Kamal Hossain</p>
+                                <div class="step-number" style="margin-top: 15px; width: 40px; height: 40px; line-height: 40px;">
+                                    <i class="fas fa-arrow-right"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="faculty-card" onclick="showFacultyModal('law')">
+                            <div class="faculty-icon">
+                                <i class="fas fa-balance-scale"></i>
+                            </div>
+                            <div class="faculty-info">
+                                <h3>Faculty of Law</h3>
+                                <p><strong>Departments:</strong> 1</p>
+                                <p><strong>Dean:</strong> Prof. Dr. Shah Alam</p>
+                                <div class="step-number" style="margin-top: 15px; width: 40px; height: 40px; line-height: 40px;">
+                                    <i class="fas fa-arrow-right"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tab-content" id="depts">
+                    <div class="form-container">
+                        <h3 class="text-center mb-30">Browse Departments by Faculty</h3>
+                        <div class="form-group">
+                            <label for="facultySelect">Select Faculty:</label>
+                            <select id="facultySelect" class="form-control">
+                                <option value="">Choose a faculty</option>
+                                <option value="science">Faculty of Science</option>
+                                <option value="arts">Faculty of Arts</option>
+                                <option value="business">Faculty of Business Studies</option>
+                                <option value="social">Faculty of Social Sciences</option>
+                                <option value="life">Faculty of Life Science</option>
+                                <option value="law">Faculty of Law</option>
+                            </select>
+                        </div>
+                        <div id="departmentList" class="mt-30" style="display: none;">
+                            <h4>Departments:</h4>
+                            <ul id="deptList"></ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Academics Section -->
+            <section id="academics" class="section">
+                <h2 class="section-title">Academic Programs</h2>
+                
+                <div class="tabs">
+                    <button class="tab active" data-tab="programs">Programs</button>
+                    <button class="tab" data-tab="calendar">Calendar</button>
+                    <button class="tab" data-tab="courses">Course Catalog</button>
+                    <button class="tab" data-tab="resources">Resources</button>
+                </div>
+                
+                <div class="tab-content active" id="programs">
+                    <div class="academics-container">
+                        <div class="academic-card">
+                            <div class="academic-header">
+                                <h3>Undergraduate Programs</h3>
+                            </div>
+                            <div class="academic-body">
+                                <ul class="academic-list">
+                                    <li><i class="fas fa-graduation-cap" style="color: var(--primary-color); margin-right: 10px;"></i> Bachelor of Science (B.Sc.)</li>
+                                    <li><i class="fas fa-graduation-cap" style="color: var(--primary-color); margin-right: 10px;"></i> Bachelor of Arts (B.A.)</li>
+                                    <li><i class="fas fa-graduation-cap" style="color: var(--primary-color); margin-right: 10px;"></i> Bachelor of Business Administration (BBA)</li>
+                                    <li><i class="fas fa-graduation-cap" style="color: var(--primary-color); margin-right: 10px;"></i> Bachelor of Social Science (B.S.S.)</li>
+                                    <li><i class="fas fa-graduation-cap" style="color: var(--primary-color); margin-right: 10px;"></i> Bachelor of Laws (LL.B.)</li>
+                                </ul>
+                                <button class="btn hero-btn" style="width: 100%; margin-top: 20px;" data-section="admission">
+                                    Apply Now
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="academic-card">
+                            <div class="academic-header">
+                                <h3>Graduate Programs</h3>
+                            </div>
+                            <div class="academic-body">
+                                <ul class="academic-list">
+                                    <li><i class="fas fa-graduation-cap" style="color: var(--primary-color); margin-right: 10px;"></i> Master of Science (M.Sc.)</li>
+                                    <li><i class="fas fa-graduation-cap" style="color: var(--primary-color); margin-right: 10px;"></i> Master of Arts (M.A.)</li>
+                                    <li><i class="fas fa-graduation-cap" style="color: var(--primary-color); margin-right: 10px;"></i> Master of Business Administration (MBA)</li>
+                                    <li><i class="fas fa-graduation-cap" style="color: var(--primary-color); margin-right: 10px;"></i> Master of Philosophy (M.Phil.)</li>
+                                    <li><i class="fas fa-graduation-cap" style="color: var(--primary-color); margin-right: 10px;"></i> Doctor of Philosophy (Ph.D.)</li>
+                                </ul>
+                                <button class="btn primary-btn" style="width: 100%; margin-top: 20px;" id="downloadProspectus">
+                                    Download Prospectus
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="academic-card">
+                            <div class="academic-header">
+                                <h3>Diploma Programs</h3>
+                            </div>
+                            <div class="academic-body">
+                                <ul class="academic-list">
+                                    <li><i class="fas fa-certificate" style="color: var(--primary-color); margin-right: 10px;"></i> Diploma in Computer Science</li>
+                                    <li><i class="fas fa-certificate" style="color: var(--primary-color); margin-right: 10px;"></i> Diploma in Business Management</li>
+                                    <li><i class="fas fa-certificate" style="color: var(--primary-color); margin-right: 10px;"></i> Diploma in Language Studies</li>
+                                    <li><i class="fas fa-certificate" style="color: var(--primary-color); margin-right: 10px;"></i> Professional Development Courses</li>
+                                </ul>
+                                <button class="btn hero-btn" style="width: 100%; margin-top: 20px;" id="viewDiplomaDetails">
+                                    View Details
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tab-content" id="calendar">
+                    <div class="form-container">
+                        <h3 class="text-center mb-30">Academic Calendar 2023-2024</h3>
+                        
+                        <div class="form-group">
+                            <label>Select Semester:</label>
+                            <div style="display: flex; gap: 10px; margin-top: 10px;">
+                                <button class="btn primary-btn" data-semester="spring">Spring 2023</button>
+                                <button class="btn hero-btn" data-semester="summer">Summer 2023</button>
+                                <button class="btn hero-btn" data-semester="fall">Fall 2023</button>
+                            </div>
+                        </div>
+                        
+                        <div id="calendarDetails" class="mt-30" style="display: none;">
+                            <h4 id="semesterTitle"></h4>
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Event</th>
+                                        <th>Date</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="calendarTable">
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Admission Section -->
+            <section id="admission" class="section">
+                <h2 class="section-title">Admission Information</h2>
+                
+                <div class="tabs">
+                    <button class="tab active" data-tab="apply">Apply Now</button>
+                    <button class="tab" data-tab="requirements">Requirements</button>
+                    <button class="tab" data-tab="dates">Important Dates</button>
+                    <button class="tab" data-tab="results">Results</button>
+                </div>
+                
+                <div class="tab-content active" id="apply">
+                    <div class="admission-process">
+                        <h3 class="text-center mb-20">Admission Process</h3>
+                        <div class="process-steps">
+                            <div class="step" onclick="showStepDetails(1)">
+                                <div class="step-number">1</div>
+                                <h4>Application</h4>
+                                <p>Fill out the online application form</p>
+                            </div>
+                            <div class="step" onclick="showStepDetails(2)">
+                                <div class="step-number">2</div>
+                                <h4>Document Upload</h4>
+                                <p>Upload required documents</p>
+                            </div>
+                            <div class="step" onclick="showStepDetails(3)">
+                                <div class="step-number">3</div>
+                                <h4>Fee Payment</h4>
+                                <p>Pay application fee online</p>
+                            </div>
+                            <div class="step" onclick="showStepDetails(4)">
+                                <div class="step-number">4</div>
+                                <h4>Admit Card</h4>
+                                <p>Download admit card for test</p>
+                            </div>
+                            <div class="step" onclick="showStepDetails(5)">
+                                <div class="step-number">5</div>
+                                <h4>Admission Test</h4>
+                                <p>Appear for admission test</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div id="admissionFormContainer">
+                        <h3 class="text-center mb-30">Online Application Form</h3>
+                        <form id="admissionForm" class="form-container">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="fullName">Full Name *</label>
+                                    <input type="text" id="fullName" class="form-control" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="fatherName">Father's Name *</label>
+                                    <input type="text" id="fatherName" class="form-control" required>
+                                </div>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="email">Email Address *</label>
+                                    <input type="email" id="email" class="form-control" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="phone">Phone Number *</label>
+                                    <input type="tel" id="phone" class="form-control" required>
+                                </div>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="program">Select Program *</label>
+                                    <select id="program" class="form-control" required>
+                                        <option value="">Choose a program</option>
+                                        <option value="bsc">Bachelor of Science (B.Sc.)</option>
+                                        <option value="ba">Bachelor of Arts (B.A.)</option>
+                                        <option value="bba">Bachelor of Business Administration (BBA)</option>
+                                        <option value="bss">Bachelor of Social Science (B.S.S.)</option>
+                                        <option value="llb">Bachelor of Laws (LL.B.)</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="department">Select Department *</label>
+                                    <select id="department" class="form-control" required>
+                                        <option value="">Choose a department</option>
+                                        <option value="cse">Computer Science & Engineering</option>
+                                        <option value="eee">Electrical & Electronics Engineering</option>
+                                        <option value="bba">Business Administration</option>
+                                        <option value="economics">Economics</option>
+                                        <option value="english">English</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="address">Permanent Address *</label>
+                                <textarea id="address" class="form-control" rows="3" required></textarea>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="hscResult">HSC/GPA Result *</label>
+                                <input type="text" id="hscResult" class="form-control" required placeholder="Enter your GPA">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label>Upload Documents *</label>
+                                <div style="margin-top: 10px;">
+                                    <button type="button" class="btn hero-btn" onclick="document.getElementById('photoUpload').click()">
+                                        <i class="fas fa-upload"></i> Upload Photo
+                                    </button>
+                                    <input type="file" id="photoUpload" accept="image/*" style="display: none;">
+                                    
+                                    <button type="button" class="btn hero-btn" onclick="document.getElementById('marksheetUpload').click()" style="margin-left: 10px;">
+                                        <i class="fas fa-upload"></i> Upload Marksheet
+                                    </button>
+                                    <input type="file" id="marksheetUpload" accept=".pdf,.jpg,.png" style="display: none;">
+                                </div>
+                                <div id="uploadStatus" style="margin-top: 10px;"></div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label>
+                                    <input type="checkbox" id="terms" required> I agree to the terms and conditions *
+                                </label>
+                            </div>
+                            
+                            <button type="submit" class="submit-btn">
+                                <i class="fas fa-paper-plane"></i> Submit Application
+                            </button>
+                        </form>
+                    </div>
+                </div>
+                
+                <div class="tab-content" id="requirements">
+                    <div class="form-container">
+                        <h3 class="text-center mb-30">Admission Requirements</h3>
+                        
+                        <div class="form-group">
+                            <label>Select Program Type:</label>
+                            <div style="display: flex; gap: 10px; margin-top: 10px; flex-wrap: wrap;">
+                                <button class="btn primary-btn" data-program="undergrad">Undergraduate</button>
+                                <button class="btn hero-btn" data-program="graduate">Graduate</button>
+                                <button class="btn hero-btn" data-program="international">International</button>
+                            </div>
+                        </div>
+                        
+                        <div id="requirementsDetails" class="mt-30" style="display: none;">
+                            <h4 id="programTypeTitle"></h4>
+                            <div id="requirementsList"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Research Section -->
+            <section id="research" class="section">
+                <h2 class="section-title">Research & Publications</h2>
+                
+                <div class="tabs">
+                    <button class="tab active" data-tab="projects">Projects</button>
+                    <button class="tab" data-tab="publications">Publications</button>
+                    <button class="tab" data-tab="funding">Funding</button>
+                    <button class="tab" data-tab="collaborations">Collaborations</button>
+                </div>
+                
+                <div class="tab-content active" id="projects">
+                    <div class="research-grid">
+                        <div class="research-card" onclick="showResearchDetails('climate')">
+                            <div class="research-img">
+                                <img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Research Lab">
+                            </div>
+                            <div class="research-content">
+                                <h3>Climate Change Adaptation</h3>
+                                <p>Research on climate change adaptation strategies in Northern Bangladesh. Funded by World Bank.</p>
+                                <div class="step-number" style="margin-top: 15px; width: 40px; height: 40px; line-height: 40px;">
+                                    <i class="fas fa-arrow-right"></i>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="research-card" onclick="showResearchDetails('digital')">
+                            <div class="research-img">
+                                <img src="https://images.unsplash.com/photo-1481627834876-b7833e8f5570?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Library">
+                            </div>
+                            <div class="research-content">
+                                <h3>Digital Transformation</h3>
+                                <p>Study on digital transformation in SMEs of Bangladesh. Collaboration with MIT.</p>
+                                <div class="step-number" style="margin-top: 15px; width: 40px; height: 40px; line-height: 40px;">
+                                    <i class="fas fa-arrow-right"></i>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="research-card" onclick="showResearchDetails('women')">
+                            <div class="research-img">
+                                <img src="https://images.unsplash.com/photo-1554475900-0a0350f3f6c6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Conference">
+                            </div>
+                            <div class="research-content">
+                                <h3>Women Empowerment</h3>
+                                <p>Research on women empowerment in rural Bangladesh. Supported by UNDP.</p>
+                                <div class="step-number" style="margin-top: 15px; width: 40px; height: 40px; line-height: 40px;">
+                                    <i class="fas fa-arrow-right"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <button class="btn primary-btn" style="display: block; margin: 40px auto;" id="viewAllProjects">
+                        <i class="fas fa-list"></i> View All Research Projects
+                    </button>
+                </div>
+            </section>
+
+            <!-- News Section -->
+            <section id="news" class="section">
+                <h2 class="section-title">News & Events</h2>
+                
+                <div class="tabs">
+                    <button class="tab active" data-tab="latest-news">Latest News</button>
+                    <button class="tab" data-tab="events">Events</button>
+                    <button class="tab" data-tab="notices">Notices</button>
+                    <button class="tab" data-tab="archive">Archive</button>
+                </div>
+                
+                <div class="tab-content active" id="latest-news">
+                    <div class="news-container">
+                        <div class="news-card" onclick="showNewsDetails(1)">
+                            <div class="news-date">June 15, 2023</div>
+                            <div class="news-content">
+                                <h3>Semester Final Exam Schedule Published</h3>
+                                <p>The schedule for the Spring 2023 semester final examinations has been published.</p>
+                                <div class="read-more">Read More <i class="fas fa-arrow-right"></i></div>
+                            </div>
+                        </div>
+                        <div class="news-card" onclick="showNewsDetails(2)">
+                            <div class="news-date">June 10, 2023</div>
+                            <div class="news-content">
+                                <h3>BRUR Research Symposium 2023</h3>
+                                <p>The annual research symposium will be held on July 20-22, 2023.</p>
+                                <div class="read-more">Read More <i class="fas fa-arrow-right"></i></div>
+                            </div>
+                        </div>
+                        <div class="news-card" onclick="showNewsDetails(3)">
+                            <div class="news-date">June 5, 2023</div>
+                            <div class="news-content">
+                                <h3>Admission Circular for 2023-24 Session</h3>
+                                <p>The admission circular for the 2023-24 academic session has been published.</p>
+                                <div class="read-more">Read More <i class="fas fa-arrow-right"></i></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="text-center mt-30">
+                        <button class="btn primary-btn" id="loadMoreNews">
+                            <i class="fas fa-plus"></i> Load More News
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="tab-content" id="events">
+                    <div class="form-container">
+                        <h3 class="text-center mb-30">Upcoming Events</h3>
+                        
+                        <div class="event-item" style="display: flex; align-items: center; padding: 15px; background: white; border-radius: 10px; margin-bottom: 15px; box-shadow: 0 3px 10px rgba(0,0,0,0.1); cursor: pointer;" onclick="showEventDetails(1)">
+                            <div style="background-color: var(--primary-color); color: white; padding: 10px 20px; border-radius: 5px; margin-right: 20px; text-align: center; min-width: 100px;">
+                                <div style="font-size: 24px; font-weight: bold;">25</div>
+                                <div>June 2023</div>
+                            </div>
+                            <div style="flex: 1;">
+                                <h4 style="margin-bottom: 5px;">Convocation 2023</h4>
+                                <p>Annual convocation ceremony for graduating students</p>
+                            </div>
+                            <div class="step-number" style="width: 40px; height: 40px; line-height: 40px;">
+                                <i class="fas fa-arrow-right"></i>
+                            </div>
+                        </div>
+                        
+                        <div class="event-item" style="display: flex; align-items: center; padding: 15px; background: white; border-radius: 10px; margin-bottom: 15px; box-shadow: 0 3px 10px rgba(0,0,0,0.1); cursor: pointer;" onclick="showEventDetails(2)">
+                            <div style="background-color: var(--primary-color); color: white; padding: 10px 20px; border-radius: 5px; margin-right: 20px; text-align: center; min-width: 100px;">
+                                <div style="font-size: 24px; font-weight: bold;">05</div>
+                                <div>July 2023</div>
+                            </div>
+                            <div style="flex: 1;">
+                                <h4 style="margin-bottom: 5px;">Career Fair</h4>
+                                <p>Annual career fair with leading companies</p>
+                            </div>
+                            <div class="step-number" style="width: 40px; height: 40px; line-height: 40px;">
+                                <i class="fas fa-arrow-right"></i>
+                            </div>
+                        </div>
+                        
+                        <button class="btn primary-btn" style="display: block; margin: 20px auto;" id="subscribeEvents">
+                            <i class="fas fa-bell"></i> Subscribe to Event Updates
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Contact Section -->
+            <section id="contact" class="section">
+                <h2 class="section-title">Contact Us</h2>
+                
+                <div class="tabs">
+                    <button class="tab active" data-tab="contact-form">Contact Form</button>
+                    <button class="tab" data-tab="departments">Department Contacts</button>
+                    <button class="tab" data-tab="emergency">Emergency</button>
+                    <button class="tab" data-tab="feedback">Feedback</button>
+                </div>
+                
+                <div class="tab-content active" id="contact-form">
+                    <div class="contact-container">
+                        <div class="contact-info">
+                            <h3 class="mb-20">Get in Touch</h3>
+                            <div class="contact-item" onclick="showContactInfo('address')">
+                                <div class="contact-icon">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div>
+                                    <h4>Address</h4>
+                                    <p>Begum Rokeya University, Rangpur<br>Rangpur 5400, Bangladesh</p>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-item" onclick="showContactInfo('phone')">
+                                <div class="contact-icon">
+                                    <i class="fas fa-phone"></i>
+                                </div>
+                                <div>
+                                    <h4>Phone</h4>
+                                    <p>+880 521-62730, 62731<br>+880 521-62732 (Fax)</p>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-item" onclick="showContactInfo('email')">
+                                <div class="contact-icon">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div>
+                                    <h4>Email</h4>
+                                    <p>info@brur.ac.bd<br>admission@brur.ac.bd</p>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-item" onclick="showContactInfo('hours')">
+                                <div class="contact-icon">
+                                    <i class="fas fa-clock"></i>
+                                </div>
+                                <div>
+                                    <h4>Office Hours</h4>
+                                    <p>Sunday-Thursday: 9:00 AM - 5:00 PM<br>Friday-Saturday: Closed</p>
+                                </div>
+                            </div>
+                            
+                            <div class="social-links">
+                                <a onclick="showSocialLink('facebook')"><i class="fab fa-facebook-f"></i></a>
+                                <a onclick="showSocialLink('twitter')"><i class="fab fa-twitter"></i></a>
+                                <a onclick="showSocialLink('youtube')"><i class="fab fa-youtube"></i></a>
+                                <a onclick="showSocialLink('linkedin')"><i class="fab fa-linkedin-in"></i></a>
+                                <a onclick="showSocialLink('instagram')"><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                        
+                        <div class="map-container">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3597.669324557323!2d89.22231431501996!3d25.6277585837103!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39e32f8e6e11f9c7%3A0x7c46b2b2b2b2b2b2!2sBegum%20Rokeya%20University!5e0!3m2!1sen!2sbd!4v1629876543210!5m2!1sen!2sbd" allowfullscreen="" loading="lazy"></iframe>
+                        </div>
+                    </div>
+                    
+                    <div class="form-container mt-30">
+                        <h3 class="text-center mb-20">Send us a Message</h3>
+                        <form id="contactForm">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="contactName">Your Name *</label>
+                                    <input type="text" id="contactName" class="form-control" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="contactEmail">Your Email *</label>
+                                    <input type="email" id="contactEmail" class="form-control" required>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="subject">Subject *</label>
+                                <select id="subject" class="form-control" required>
+                                    <option value="">Select a subject</option>
+                                    <option value="admission">Admission Inquiry</option>
+                                    <option value="academic">Academic Matter</option>
+                                    <option value="research">Research Collaboration</option>
+                                    <option value="complaint">Complaint</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="message">Message *</label>
+                                <textarea id="message" class="form-control" rows="5" required></textarea>
+                            </div>
+                            
+                            <button type="submit" class="submit-btn">
+                                <i class="fas fa-paper-plane"></i> Send Message
+                            </button>
+                        </form>
+                    </div>
+                </div>
+                
+                <div class="tab-content" id="emergency">
+                    <div class="form-container">
+                        <h3 class="text-center mb-30">Emergency Contacts</h3>
+                        
+                        <div class="contact-info">
+                            <div class="contact-item" onclick="callEmergency('security')">
+                                <div class="contact-icon" style="background-color: #dc3545;">
+                                    <i class="fas fa-shield-alt"></i>
+                                </div>
+                                <div>
+                                    <h4>Campus Security</h4>
+                                    <p><strong>Phone:</strong> +880 521-62799 (24/7)</p>
+                                    <p><strong>Emergency:</strong> 999 (National Emergency)</p>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-item" onclick="callEmergency('medical')">
+                                <div class="contact-icon" style="background-color: #28a745;">
+                                    <i class="fas fa-ambulance"></i>
+                                </div>
+                                <div>
+                                    <h4>Medical Emergency</h4>
+                                    <p><strong>Campus Medical Center:</strong> +880 521-62788</p>
+                                    <p><strong>Ambulance:</strong> 199 (National Ambulance)</p>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-item" onclick="callEmergency('counseling')">
+                                <div class="contact-icon" style="background-color: #17a2b8;">
+                                    <i class="fas fa-user-md"></i>
+                                </div>
+                                <div>
+                                    <h4>Student Counseling</h4>
+                                    <p><strong>Counseling Center:</strong> +880 521-62777</p>
+                                    <p>Available: Sun-Thu, 10 AM - 4 PM</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <button class="btn primary-btn" style="background-color: #dc3545; display: block; margin: 30px auto;" id="emergencyCallBtn">
+                            <i class="fas fa-phone-alt"></i> Call Emergency (999)
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>Contact Us</h3>
+                <div class="contact-info-footer" onclick="showContactInfo('address')">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div>Begum Rokeya University, Rangpur<br>Rangpur 5400, Bangladesh</div>
+                </div>
+                <div class="contact-info-footer" onclick="showContactInfo('phone')">
+                    <i class="fas fa-phone"></i>
+                    <div>+880 521-62730, 62731</div>
+                </div>
+                <div class="contact-info-footer" onclick="showContactInfo('email')">
+                    <i class="fas fa-envelope"></i>
+                    <div>info@brur.ac.bd</div>
+                </div>
+                <div class="contact-info-footer" onclick="showContactInfo('website')">
+                    <i class="fas fa-globe"></i>
+                    <div>www.brur.ac.bd</div>
+                </div>
+            </div>
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a data-section="home">Home</a></li>
+                    <li><a data-section="about">About BRUR</a></li>
+                    <li><a data-section="faculties">Faculties & Departments</a></li>
+                    <li><a data-section="academics">Academic Calendar</a></li>
+                    <li><a data-section="admission">Admission Information</a></li>
+                    <li><a data-section="research">Research & Publications</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Important Links</h3>
+                <ul class="footer-links">
+                    <li><a onclick="openExternalLink('ugc')">University Grants Commission</a></li>
+                    <li><a onclick="openExternalLink('education')">Ministry of Education</a></li>
+                    <li><a onclick="openExternalLink('nu')">National University</a></li>
+                    <li><a onclick="openExternalLink('bren')">Bangladesh Research & Education Network</a></li>
+                    <li><a onclick="openExternalLink('digital')">Digital Bangladesh</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Connect With Us</h3>
+                <div class="social-links">
+                    <a onclick="showSocialLink('facebook')"><i class="fab fa-facebook-f"></i></a>
+                    <a onclick="showSocialLink('twitter')"><i class="fab fa-twitter"></i></a>
+                    <a onclick="showSocialLink('youtube')"><i class="fab fa-youtube"></i></a>
+                    <a onclick="showSocialLink('linkedin')"><i class="fab fa-linkedin-in"></i></a>
+                    <a onclick="showSocialLink('instagram')"><i class="fab fa-instagram"></i></a>
+                </div>
+                <div style="margin-top: 20px;">
+                    <h4>Visitor Count</h4>
+                    <p style="font-size: 24px; font-weight: bold; color: var(--secondary-color);" id="visitorCount">1,245,789</p>
+                </div>
+                <button class="btn hero-btn" style="margin-top: 15px; width: 100%;" onclick="showFeedbackForm()">
+                    <i class="fas fa-comment-alt"></i> Give Feedback
+                </button>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2023 Begum Rokeya University, Rangpur. All Rights Reserved.</p>
+            <p style="margin-top: 5px;">Developed by: BRUR IT Department</p>
+        </div>
+    </footer>
+
+    <!-- Login Modal -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Login to BRUR Portal</h3>
+                <button class="close-modal" onclick="closeModal('loginModal')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="tabs" style="border-bottom: none; margin-bottom: 20px;">
+                    <button class="tab active" data-tab="student-login">Student</button>
+                    <button class="tab" data-tab="faculty-login">Faculty</button>
+                    <button class="tab" data-tab="admin-login">Admin</button>
+                </div>
+                
+                <div class="tab-content active" id="student-login">
+                    <form id="studentLoginForm">
+                        <div class="form-group">
+                            <label for="studentId">Student ID</label>
+                            <input type="text" id="studentId" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="studentPassword">Password</label>
+                            <input type="password" id="studentPassword" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label>
+                                <input type="checkbox"> Remember me
+                            </label>
+                        </div>
+                        <button type="submit" class="submit-btn" style="width: 100%;">Login as Student</button>
+                    </form>
+                </div>
+                
+                <div class="tab-content" id="faculty-login">
+                    <form id="facultyLoginForm">
+                        <div class="form-group">
+                            <label for="facultyEmail">Email Address</label>
+                            <input type="email" id="facultyEmail" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="facultyPassword">Password</label>
+                            <input type="password" id="facultyPassword" class="form-control" required>
+                        </div>
+                        <button type="submit" class="submit-btn" style="width: 100%;">Login as Faculty</button>
+                    </form>
+                </div>
+                
+                <div class="text-center mt-20">
+                    <a href="#" style="color: var(--primary-color);">Forgot password?</a> | 
+                    <a href="#" style="color: var(--primary-color);">Create new account</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Faculty Detail Modal -->
+    <div id="facultyModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="facultyModalTitle">Faculty Details</h3>
+                <button class="close-modal" onclick="closeModal('facultyModal')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div id="facultyModalContent"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- News Detail Modal -->
+    <div id="newsModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="newsModalTitle">News Details</h3>
+                <button class="close-modal" onclick="closeModal('newsModal')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div id="newsModalContent"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Event Detail Modal -->
+    <div id="eventModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="eventModalTitle">Event Details</h3>
+                <button class="close-modal" onclick="closeModal('eventModal')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div id="eventModalContent"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Research Detail Modal -->
+    <div id="researchModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="researchModalTitle">Research Details</h3>
+                <button class="close-modal" onclick="closeModal('researchModal')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div id="researchModalContent"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Virtual Tour Modal -->
+    <div id="tourModal" class="modal">
+        <div class="modal-content" style="max-width: 800px;">
+            <div class="modal-header">
+                <h3>Virtual Campus Tour</h3>
+                <button class="close-modal" onclick="closeModal('tourModal')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div style="text-align: center;">
+                    <div style="background-color: #f8f9fa; padding: 20px; border-radius: 10px; margin-bottom: 20px;">
+                        <h4>Explore BRUR Campus Virtually</h4>
+                        <p>Select a location to explore:</p>
+                    </div>
+                    
+                    <div class="quick-links">
+                        <div class="quick-link-card" onclick="startTour('library')">
+                            <div class="quick-link-icon">
+                                <i class="fas fa-book"></i>
+                            </div>
+                            <h3>Central Library</h3>
+                        </div>
+                        
+                        <div class="quick-link-card" onclick="startTour('admin')">
+                            <div class="quick-link-icon">
+                                <i class="fas fa-landmark"></i>
+                            </div>
+                            <h3>Admin Building</h3>
+                        </div>
+                        
+                        <div class="quick-link-card" onclick="startTour('science')">
+                            <div class="quick-link-icon">
+                                <i class="fas fa-flask"></i>
+                            </div>
+                            <h3>Science Building</h3>
+                        </div>
+                    </div>
+                    
+                    <div id="tourView" style="margin-top: 30px; display: none;">
+                        <h4 id="tourLocation"></h4>
+                        <div style="background-color: #000; color: white; padding: 20px; border-radius: 10px; min-height: 300px; display: flex; align-items: center; justify-content: center;">
+                            <div style="text-align: center;">
+                                <i class="fas fa-video" style="font-size: 50px; margin-bottom: 20px;"></i>
+                                <p>Virtual tour simulation for <strong id="currentLocation"></strong></p>
+                                <p>This would show a 360° view in a real implementation</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Emergency Modal -->
+    <div id="emergencyModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header" style="background-color: #dc3545;">
+                <h3>Emergency Contact</h3>
+                <button class="close-modal" onclick="closeModal('emergencyModal')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div style="text-align: center; padding: 20px;">
+                    <i class="fas fa-phone-alt" style="font-size: 60px; color: #dc3545; margin-bottom: 20px;"></i>
+                    <h3>Emergency Services</h3>
+                    <p>Please select the emergency service you need:</p>
+                    
+                    <div style="display: flex; flex-direction: column; gap: 15px; margin-top: 30px;">
+                        <button class="btn" style="background-color: #dc3545; color: white;" onclick="simulateCall('999')">
+                            <i class="fas fa-ambulance"></i> National Emergency (999)
+                        </button>
+                        <button class="btn" style="background-color: #28a745; color: white;" onclick="simulateCall('199')">
+                            <i class="fas fa-hospital"></i> Ambulance Service (199)
+                        </button>
+                        <button class="btn" style="background-color: #ffc107; color: #333;" onclick="simulateCall('521-62799')">
+                            <i class="fas fa-shield-alt"></i> Campus Security (62799)
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // ====================
+        // GLOBAL VARIABLES
+        // ====================
+        let visitorCount = 1245789;
+        let currentTheme = 'light';
+        let notifications = [];
+        let userLoggedIn = false;
+
+        // ====================
+        // DOM ELEMENTS
+        // ====================
+        const elements = {
+            progressBar: document.getElementById('progressBar'),
+            notification: document.getElementById('notification'),
+            searchBar: document.getElementById('searchBar'),
+            searchInput: document.getElementById('searchInput'),
+            searchResults: document.getElementById('searchResults'),
+            closeSearch: document.getElementById('closeSearch'),
+            visitorCount: document.getElementById('visitorCount'),
+            mobileMenuBtn: document.getElementById('mobileMenuBtn'),
+            navMenu: document.getElementById('navMenu'),
+            sections: document.querySelectorAll('.section'),
+            tabs: document.querySelectorAll('.tab'),
+            tabContents: document.querySelectorAll('.tab-content'),
+            loginModal: document.getElementById('loginModal'),
+            facultyModal: document.getElementById('facultyModal'),
+            newsModal: document.getElementById('newsModal'),
+            eventModal: document.getElementById('eventModal'),
+            researchModal: document.getElementById('researchModal'),
+            tourModal: document.getElementById('tourModal'),
+            emergencyModal: document.getElementById('emergencyModal'),
+            admissionForm: document.getElementById('admissionForm'),
+            contactForm: document.getElementById('contactForm'),
+            studentLoginForm: document.getElementById('studentLoginForm'),
+            facultyLoginForm: document.getElementById('facultyLoginForm')
+        };
+
+        // ====================
+        // INITIALIZATION
+        // ====================
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeWebsite();
+            setupEventListeners();
+            startLiveUpdates();
+        });
+
+        // ====================
+        // INITIALIZATION FUNCTION
+        // ====================
+        function initializeWebsite() {
+            // Set visitor count
+            elements.visitorCount.textContent = formatNumber(visitorCount);
+            
+            // Initialize tooltips
+            initializeTooltips();
+            
+            // Set current year in footer
+            document.querySelector('.copyright p').innerHTML = document.querySelector('.copyright p').innerHTML.replace('2023', new Date().getFullYear());
+            
+            // Show welcome notification
+            setTimeout(() => {
+                showNotification('Welcome to Begum Rokeya University website!', 'info');
+            }, 1000);
+        }
+
+        // ====================
+        // EVENT LISTENERS SETUP
+        // ====================
+        function setupEventListeners() {
+            // Navigation
+            document.querySelectorAll('.nav-menu a, .hero-btn[data-section], .quick-link-card[data-section], .footer-links a[data-section]').forEach(el => {
+                el.addEventListener('click', handleNavigation);
+            });
+
+            // Logo click
+            document.getElementById('logoBtn').addEventListener('click', () => {
+                switchSection('home');
+                showNotification('Welcome to BRUR Homepage!', 'info');
+            });
+
+            // Mobile menu
+            elements.mobileMenuBtn.addEventListener('click', toggleMobileMenu);
+
+            // Search functionality
+            document.getElementById('searchBtn').addEventListener('click', openSearch);
+            elements.closeSearch.addEventListener('click', closeSearch);
+            elements.searchInput.addEventListener('input', handleSearch);
+            document.getElementById('themeToggle').addEventListener('click', toggleTheme);
+
+            // Login
+            document.getElementById('loginBtn').addEventListener('click', () => openModal('loginModal'));
+
+            // Emergency
+            document.getElementById('emergencyBtn').addEventListener('click', () => openModal('emergencyModal'));
+            document.getElementById('emergencyCallBtn').addEventListener('click', () => openModal('emergencyModal'));
+
+            // Virtual tour
+            document.getElementById('virtualTourBtn').addEventListener('click', () => openModal('tourModal'));
+            document.getElementById('campusTourBtn').addEventListener('click', () => openModal('tourModal'));
+
+            // Forms
+            if (elements.admissionForm) {
+                elements.admissionForm.addEventListener('submit', handleAdmissionSubmit);
+            }
+            if (elements.contactForm) {
+                elements.contactForm.addEventListener('submit', handleContactSubmit);
+            }
+            if (elements.studentLoginForm) {
+                elements.studentLoginForm.addEventListener('submit', handleLoginSubmit);
+            }
+            if (elements.facultyLoginForm) {
+                elements.facultyLoginForm.addEventListener('submit', handleLoginSubmit);
+            }
+
+            // Tabs
+            elements.tabs.forEach(tab => {
+                tab.addEventListener('click', handleTabClick);
+            });
+
+            // Refresh updates
+            document.getElementById('refreshUpdates').addEventListener('click', refreshLiveUpdates);
+
+            // Load more news
+            document.getElementById('loadMoreNews').addEventListener('click', loadMoreNews);
+
+            // View all projects
+            document.getElementById('viewAllProjects').addscriber('click', () => {
+                showNotification('Loading all research projects...', 'info');
+                setTimeout(() => {
+                    showNotification('25 research projects loaded successfully!', 'success');
+                }, 1500);
+            });
+
+            // Download prospectus
+            document.getElementById('downloadProspectus').addEventListener('click', () => {
+                showNotification('Prospectus download started!', 'success');
+                simulateDownload('BRUR_Prospectus_2023.pdf');
+            });
+
+            // Download factsheet
+            document.getElementById('downloadFactsheet').addEventListener('click', () => {
+                showNotification('Factsheet download started!', 'success');
+                simulateDownload('BRUR_Factsheet_2023.pdf');
+            });
+
+            // Subscribe to events
+            document.getElementById('subscribeEvents').addEventListener('click', () => {
+                const email = prompt('Enter your email to subscribe to event updates:');
+                if (email) {
+                    showNotification(`Subscribed ${email} to event updates!`, 'success');
+                }
+            });
+
+            // View timeline
+            document.getElementById('viewTimelineBtn').addEventListener('click', () => {
+                openModal('facultyModal');
+                document.getElementById('facultyModalTitle').textContent = 'BRUR Historical Timeline';
+                document.getElementById('facultyModalContent').innerHTML = `
+                    <h4>University Timeline</h4>
+                    <ul>
+                        <li><strong>2008:</strong> University established by an act of parliament</li>
+                        <li><strong>2009:</strong> First academic session begins with 4 departments</li>
+                        <li><strong>2012:</strong> First convocation held</li>
+                        <li><strong>2015:</strong> Central library inaugurated</li>
+                        <li><strong>2018:</strong> 10th anniversary celebration</li>
+                        <li><strong>2021:</strong> New academic building completed</li>
+                        <li><strong>2023:</strong> 15th year of establishment</li>
+                    </ul>
+                `;
+            });
+
+            // Faculty select
+            document.getElementById('facultySelect').addEventListener('change', handleFacultySelect);
+
+            // Program requirements
+            document.querySelectorAll('[data-program]').forEach(btn => {
+                btn.addEventListener('click', handleProgramRequirements);
+            });
+
+            // Semester buttons
+            document.querySelectorAll('[data-semester]').forEach(btn => {
+                btn.addEventListener('click', handleSemesterSelect);
+            });
+
+            // File uploads
+            document.getElementById('photoUpload').addEventListener('change', handleFileUpload);
+            document.getElementById('marksheetUpload').addEventListener('change', handleFileUpload);
+
+            // Progress bar on scroll
+            window.addEventListener('scroll', updateProgressBar);
+
+            // Close modals on outside click
+            document.querySelectorAll('.modal').forEach(modal => {
+                modal.addEventListener('click', (e) => {
+                    if (e.target === modal) {
+                        modal.classList.remove('active');
+                    }
+                });
+            });
+
+            // Keyboard shortcuts
+            document.addEventListener('keydown', handleKeyboardShortcuts);
+        }
+
+        // ====================
+        // CORE FUNCTIONS
+        // ====================
+        function handleNavigation(e) {
+            e.preventDefault();
+            const section = this.getAttribute('data-section') || 
+                          this.closest('[data-section]')?.getAttribute('data-section');
+            
+            if (section) {
+                switchSection(section);
+                
+                // Close mobile menu if open
+                if (window.innerWidth <= 992) {
+                    elements.navMenu.classList.remove('show');
+                    elements.mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+                }
+            }
+        }
+
+        function switchSection(sectionId) {
+            // Hide all sections
+            elements.sections.forEach(section => {
+                section.classList.remove('active');
+            });
+
+            // Show selected section
+            const targetSection = document.getElementById(sectionId);
+            if (targetSection) {
+                targetSection.classList.add('active');
+                
+                // Update active nav
+                document.querySelectorAll('.nav-menu li').forEach(li => {
+                    li.classList.remove('active');
+                });
+                
+                const navItem = document.querySelector(`.nav-menu a[data-section="${sectionId}"]`);
+                if (navItem) {
+                    navItem.parentElement.classList.add('active');
+                }
+                
+                // Scroll to top
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+                
+                // Show notification
+                const sectionNames = {
+                    'home': 'Home',
+                    'about': 'About BRUR',
+                    'faculties': 'Faculties',
+                    'academics': 'Academics',
+                    'admission': 'Admission',
+                    'research': 'Research',
+                    'news': 'News & Events',
+                    'contact': 'Contact'
+                };
+                
+                if (sectionNames[sectionId]) {
+                    showNotification(`Navigated to ${sectionNames[sectionId]} section`, 'info');
+                }
+            }
+        }
+
+        function toggleMobileMenu() {
+            elements.navMenu.classList.toggle('show');
+            elements.mobileMenuBtn.innerHTML = elements.navMenu.classList.contains('show') 
+                ? '<i class="fas fa-times"></i>' 
+                : '<i class="fas fa-bars"></i>';
+        }
+
+        // ====================
+        // MODAL FUNCTIONS
+        // ====================
+        function openModal(modalId) {
+            document.getElementById(modalId).classList.add('active');
+            showNotification(`Opening ${modalId.replace('Modal', '')}...`, 'info');
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).classList.remove('active');
+        }
+
+        function showFacultyModal(faculty) {
+            const facultyData = {
+                'science': {
+                    title: 'Faculty of Science',
+                    departments: ['Mathematics', 'Physics', 'Chemistry', 'Statistics', 'Computer Science & Engineering', 'Environmental Science'],
+                    dean: 'Prof. Dr. Mohammad Ali',
+                    programs: ['B.Sc. (Honors)', 'M.Sc.', 'M.Phil.', 'Ph.D.'],
+                    contact: 'science@brur.ac.bd',
+                    phone: '+880 521-62740'
+                },
+                'arts': {
+                    title: 'Faculty of Arts',
+                    departments: ['Bengali', 'English', 'History', 'Philosophy', 'Islamic Studies', 'Islamic History & Culture'],
+                    dean: 'Prof. Dr. Fatema Begum',
+                    programs: ['B.A. (Honors)', 'M.A.', 'M.Phil.', 'Ph.D.'],
+                    contact: 'arts@brur.ac.bd',
+                    phone: '+880 521-62741'
+                },
+                'business': {
+                    title: 'Faculty of Business Studies',
+                    departments: ['Management Studies', 'Accounting & Information Systems', 'Marketing', 'Finance & Banking'],
+                    dean: 'Prof. Dr. Rahman Khan',
+                    programs: ['BBA', 'MBA', 'M.Phil.', 'Ph.D.'],
+                    contact: 'business@brur.ac.bd',
+                    phone: '+880 521-62742'
+                }
+            };
+
+            if (facultyData[faculty]) {
+                const data = facultyData[faculty];
+                document.getElementById('facultyModalTitle').textContent = data.title;
+                document.getElementById('facultyModalContent').innerHTML = `
+                    <h4>Departments</h4>
+                    <ul>
+                        ${data.departments.map(dept => `<li>${dept}</li>`).join('')}
+                    </ul>
+                    
+                    <h4 class="mt-20">Programs Offered</h4>
+                    <ul>
+                        ${data.programs.map(prog => `<li>${prog}</li>`).join('')}
+                    </ul>
+                    
+                    <h4 class="mt-20">Contact Information</h4>
+                    <p><strong>Dean:</strong> ${data.dean}</p>
+                    <p><strong>Email:</strong> ${data.contact}</p>
+                    <p><strong>Phone:</strong> ${data.phone}</p>
+                    
+                    <button class="btn primary-btn mt-20" onclick="showNotification('Department list sent to your email!', 'success')">
+                        <i class="fas fa-envelope"></i> Get Department List
+                    </button>
+                `;
+                openModal('facultyModal');
+            }
+        }
+
+        function showNewsDetails(newsId) {
+            const newsData = {
+                1: {
+                    title: 'Semester Final Exam Schedule Published',
+                    date: 'June 15, 2023',
+                    content: `
+                        <p>The schedule for the Spring 2023 semester final examinations has been published. All students are advised to check the notice board and university website for details.</p>
+                        <p><strong>Key Dates:</strong></p>
+                        <ul>
+                            <li>Exam starts: July 1, 2023</li>
+                            <li>Exam ends: July 20, 2023</li>
+                            <li>Result publication: August 15, 2023</li>
+                        </ul>
+                        <p>For any queries, contact the examination controller's office.</p>
+                    `
+                },
+                2: {
+                    title: 'BRUR Research Symposium 2023',
+                    date: 'June 10, 2023',
+                    content: `
+                        <p>The annual research symposium will be held on July 20-22, 2023. Researchers from different faculties will present their papers.</p>
+                        <p><strong>Highlights:</strong></p>
+                        <ul>
+                            <li>Keynote speech by Nobel Laureate</li>
+                            <li>Poster presentation competition</li>
+                            <li>Best paper awards</li>
+                            <li>Networking sessions</li>
+                        </ul>
+                        <p>Registration is now open. Early bird discount available until June 30.</p>
+                    `
+                }
+            };
+
+            if (newsData[newsId]) {
+                const data = newsData[newsId];
+                document.getElementById('newsModalTitle').textContent = data.title;
+                document.getElementById('newsModalContent').innerHTML = `
+                    <div class="news-date">${data.date}</div>
+                    ${data.content}
+                    <div class="mt-20">
+                        <button class="btn primary-btn" onclick="showNotification('News saved to your reading list!', 'success')">
+                            <i class="fas fa-bookmark"></i> Save for Later
+                        </button>
+                        <button class="btn hero-btn" onclick="printNews()">
+                            <i class="fas fa-print"></i> Print
+                        </button>
+                    </div>
+                `;
+                openModal('newsModal');
+            }
+        }
+
+        function showEventDetails(eventId) {
+            const eventData = {
+                1: {
+                    title: 'Convocation 2023',
+                    date: 'June 25, 2023',
+                    location: 'BRUR Auditorium',
+                    content: `
+                        <p>The annual convocation ceremony for the graduating class of 2023 will be held at the university auditorium.</p>
+                        <p><strong>Schedule:</strong></p>
+                        <ul>
+                            <li>9:00 AM - Registration</li>
+                            <li>10:00 AM - Academic Procession</li>
+                            <li>10:30 AM - Convocation Address</li>
+                            <li>11:30 AM - Degree Conferment</li>
+                            <li>1:00 PM - Lunch Reception</li>
+                        </ul>
+                        <p><strong>Guest of Honor:</strong> Honorable Education Minister</p>
+                        <p>Graduates must register by June 20, 2023.</p>
+                    `
+                }
+            };
+
+            if (eventData[eventId]) {
+                const data = eventData[eventId];
+                document.getElementById('eventModalTitle').textContent = data.title;
+                document.getElementById('eventModalContent').innerHTML = `
+                    <div style="background-color: #f8f9fa; padding: 15px; border-radius: 5px; margin-bottom: 20px;">
+                        <p><strong>Date:</strong> ${data.date}</p>
+                        <p><strong>Location:</strong> ${data.location}</p>
+                    </div>
+                    ${data.content}
+                    <div class="mt-20">
+                        <button class="btn primary-btn" onclick="showNotification('Added to calendar!', 'success')">
+                            <i class="fas fa-calendar-plus"></i> Add to Calendar
+                        </button>
+                        <button class="btn hero-btn" onclick="shareEvent()">
+                            <i class="fas fa-share-alt"></i> Share Event
+                        </button>
+                    </div>
+                `;
+                openModal('eventModal');
+            }
+        }
+
+        function showResearchDetails(researchId) {
+            const researchData = {
+                'climate': {
+                    title: 'Climate Change Adaptation Research',
+                    content: `
+                        <h4>Project Overview</h4>
+                        <p>This research focuses on developing climate change adaptation strategies for Northern Bangladesh.</p>
+                        
+                        <h4 class="mt-20">Research Team</h4>
+                        <ul>
+                            <li>Principal Investigator: Prof. Dr. Ahmed Hussain</li>
+                            <li>Co-Investigators: 5 faculty members</li>
+                            <li>Research Assistants: 8 graduate students</li>
+                        </ul>
+                        
+                        <h4 class="mt-20">Funding</h4>
+                        <p><strong>Amount:</strong> $250,000 USD</p>
+                        <p><strong>Duration:</strong> 3 years (2022-2025)</p>
+                        <p><strong>Funder:</strong> World Bank</p>
+                        
+                        <h4 class="mt-20">Publications</h4>
+                        <ul>
+                            <li>3 journal articles published</li>
+                            <li>2 conference papers presented</li>
+                            <li>1 book chapter in progress</li>
+                        </ul>
+                    `
+                }
+            };
+
+            if (researchData[researchId]) {
+                const data = researchData[researchId];
+                document.getElementById('researchModalTitle').textContent = data.title;
+                document.getElementById('researchModalContent').innerHTML = data.content;
+                openModal('researchModal');
+            }
+        }
+
+        // ====================
+        // FORM HANDLERS
+        // ====================
+        function handleAdmissionSubmit(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = {
+                name: document.getElementById('fullName').value,
+                email: document.getElementById('email').value,
+                program: document.getElementById('program').value,
+                department: document.getElementById('department').value
+            };
+            
+            // Generate application ID
+            const applicationId = 'BRUR' + Date.now().toString().slice(-8);
+            
+            // Show success message
+            showNotification(`Application submitted successfully! Your Application ID: ${applicationId}`, 'success');
+            
+            // Reset form
+            e.target.reset();
+            document.getElementById('uploadStatus').innerHTML = '';
+            
+            // Simulate email confirmation
+            setTimeout(() => {
+                showNotification(`Confirmation email sent to ${formData.email}`, 'info');
+            }, 2000);
+        }
+
+        function handleContactSubmit(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('contactName').value;
+            const email = document.getElementById('contactEmail').value;
+            const subject = document.getElementById('subject').value;
+            
+            showNotification(`Thank you ${name}! Your message has been sent successfully. We'll respond to ${email} soon.`, 'success');
+            
+            e.target.reset();
+        }
+
+        function handleLoginSubmit(e) {
+            e.preventDefault();
+            const formType = e.target.id.includes('student') ? 'Student' : 'Faculty';
+            showNotification(`${formType} login successful! Redirecting to dashboard...`, 'success');
+            
+            setTimeout(() => {
+                closeModal('loginModal');
+                userLoggedIn = true;
+                document.getElementById('loginBtn').innerHTML = '<i class="fas fa-user"></i> My Account';
+                showNotification('Welcome to your BRUR account!', 'info');
+            }, 1500);
+        }
+
+        // ====================
+        // SEARCH FUNCTIONALITY
+        // ====================
+        function openSearch() {
+            elements.searchBar.classList.add('active');
+            elements.searchInput.focus();
+            showNotification('Search the BRUR website...', 'info');
+        }
+
+        function closeSearch() {
+            elements.searchBar.classList.remove('active');
+            elements.searchInput.value = '';
+            elements.searchResults.innerHTML = '';
+        }
+
+        function handleSearch() {
+            const query = elements.searchInput.value.toLowerCase();
+            if (query.length < 2) {
+                elements.searchResults.innerHTML = '';
+                return;
+            }
+            
+            const searchData = [
+                { title: 'Admission Process', section: 'admission', description: 'Learn about admission requirements and apply online' },
+                { title: 'Academic Programs', section: 'academics', description: 'Browse undergraduate and graduate programs' },
+                { title: 'Faculty of Science', section: 'faculties', description: 'Information about science departments and programs' },
+                { title: 'Research Projects', section: 'research', description: 'Current research projects and publications' },
+                { title: 'Contact Information', section: 'contact', description: 'University address, phone, and email' },
+                { title: 'News & Events', section: 'news', description: 'Latest university news and upcoming events' }
+            ];
+            
+            const results = searchData.filter(item => 
+                item.title.toLowerCase().includes(query) || 
+                item.description.toLowerCase().includes(query)
+            );
+            
+            if (results.length > 0) {
+                elements.searchResults.innerHTML = `
+                    <h4>Search Results (${results.length})</h4>
+                    ${results.map(item => `
+                        <div style="padding: 10px; border-bottom: 1px solid rgba(255,255,255,0.1); cursor: pointer;" 
+                             onclick="searchResultClicked('${item.section}')">
+                            <strong>${item.title}</strong>
+                            <p style="margin: 5px 0; color: #ccc;">${item.description}</p>
+                        </div>
+                    `).join('')}
+                `;
+            } else {
+                elements.searchResults.innerHTML = '<p>No results found. Try different keywords.</p>';
+            }
+        }
+
+        function searchResultClicked(section) {
+            closeSearch();
+            switchSection(section);
+        }
+
+        // ====================
+        // THEME TOGGLE
+        // ====================
+        function toggleTheme() {
+            currentTheme = currentTheme === 'light' ? 'dark' : 'light';
+            
+            if (currentTheme === 'dark') {
+                document.body.style.backgroundColor = '#1a1a1a';
+                document.body.style.color = '#ffffff';
+                document.querySelector('.main-header').style.backgroundColor = '#2d2d2d';
+                document.querySelector('.nav-menu a').style.color = '#ffffff';
+                document.getElementById('themeToggle').innerHTML = '<i class="fas fa-sun"></i> Light Mode';
+            } else {
+                document.body.style.backgroundColor = '#f5f5f5';
+                document.body.style.color = '#333';
+                document.querySelector('.main-header').style.backgroundColor = 'white';
+                document.querySelector('.nav-menu a').style.color = '#343a40';
+                document.getElementById('themeToggle').innerHTML = '<i class="fas fa-moon"></i> Dark Mode';
+            }
+            
+            showNotification(`${currentTheme === 'dark' ? 'Dark' : 'Light'} mode activated`, 'info');
+        }
+
+        // ====================
+        // TAB HANDLING
+        // ====================
+        function handleTabClick(e) {
+            const tabId = this.getAttribute('data-tab');
+            
+            // Update active tab
+            elements.tabs.forEach(tab => tab.classList.remove('active'));
+            this.classList.add('active');
+            
+            // Show corresponding content
+            elements.tabContents.forEach(content => {
+                content.classList.remove('active');
+                if (content.id === tabId) {
+                    content.classList.add('active');
+                }
+            });
+            
+            showNotification(`Showing ${this.textContent}`, 'info');
+        }
+
+        // ====================
+        // UTILITY FUNCTIONS
+        // ====================
+        function showNotification(message, type = 'info') {
+            const notification = elements.notification;
+            notification.textContent = message;
+            notification.className = `notification ${type}`;
+            notification.classList.add('show');
+            
+            setTimeout(() => {
+                notification.classList.remove('show');
+            }, 3000);
+        }
+
+        function formatNumber(num) {
+            return num.toLocaleString();
+        }
+
+        function updateProgressBar() {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            elements.progressBar.style.width = scrolled + "%";
+        }
+
+        function simulateDownload(filename) {
+            showNotification(`Downloading ${filename}...`, 'info');
+            // In a real implementation, this would trigger a file download
+        }
+
+        function simulateCall(number) {
+            showNotification(`Calling ${number}... (This is a simulation)`, 'warning');
+            closeModal('emergencyModal');
+        }
+
+        function startTour(location) {
+            const locationNames = {
+                'library': 'Central Library',
+                'admin': 'Administration Building',
+                'science': 'Science Building'
+            };
+            
+            document.getElementById('tourView').style.display = 'block';
+            document.getElementById('tourLocation').textContent = locationNames[location];
+            document.getElementById('currentLocation').textContent = locationNames[location];
+            
+            showNotification(`Starting virtual tour of ${locationNames[location]}`, 'info');
+        }
+
+        function handleFacultySelect(e) {
+            const faculty = e.target.value;
+            const departmentList = document.getElementById('departmentList');
+            const deptList = document.getElementById('deptList');
+            
+            if (faculty) {
+                const departments = {
+                    'science': ['Mathematics', 'Physics', 'Chemistry', 'Statistics', 'Computer Science & Engineering', 'Environmental Science'],
+                    'arts': ['Bengali', 'English', 'History', 'Philosophy', 'Islamic Studies', 'Islamic History & Culture'],
+                    'business': ['Management Studies', 'Accounting & Information Systems', 'Marketing', 'Finance & Banking'],
+                    'social': ['Economics', 'Political Science', 'Sociology', 'Social Work', 'Mass Communication & Journalism'],
+                    'life': ['Biotechnology', 'Genetic Engineering', 'Microbiology', 'Biochemistry'],
+                    'law': ['Law and Justice']
+                };
+                
+                deptList.innerHTML = departments[faculty].map(dept => `<li>${dept}</li>`).join('');
+                departmentList.style.display = 'block';
+                showNotification(`Showing departments for ${faculty} faculty`, 'info');
+            } else {
+                departmentList.style.display = 'none';
+            }
+        }
+
+        function handleProgramRequirements(e) {
+            const program = this.getAttribute('data-program');
+            const detailsDiv = document.getElementById('requirementsDetails');
+            const title = document.getElementById('programTypeTitle');
+            const list = document.getElementById('requirementsList');
+            
+            const requirements = {
+                'undergrad': {
+                    title: 'Undergraduate Admission Requirements',
+                    items: [
+                        'Minimum GPA 3.0 in SSC and HSC',
+                        'Pass certificate from recognized board',
+                        'Science students must have Physics, Chemistry, and Math',
+                        'Arts students must have Bangla and English',
+                        'Valid national ID card',
+                        'Passport size photographs'
+                    ]
+                },
+                'graduate': {
+                    title: 'Graduate Admission Requirements',
+                    items: [
+                        'Bachelor degree with minimum CGPA 2.5',
+                        'Transcript of all academic records',
+                        'Two recommendation letters',
+                        'Statement of purpose',
+                        'Research proposal (for M.Phil/Ph.D)',
+                        'Proof of English proficiency'
+                    ]
+                }
+            };
+            
+            if (requirements[program]) {
+                title.textContent = requirements[program].title;
+                list.innerHTML = requirements[program].items.map(item => `<li>${item}</li>`).join('');
+                detailsDiv.style.display = 'block';
+                showNotification(`Showing requirements for ${program} programs`, 'info');
+            }
+        }
+
+        function handleSemesterSelect(e) {
+            const semester = this.getAttribute('data-semester');
+            const detailsDiv = document.getElementById('calendarDetails');
+            const title = document.getElementById('semesterTitle');
+            const table = document.getElementById('calendarTable');
+            
+            const calendars = {
+                'spring': {
+                    title: 'Spring 2023 Semester Calendar',
+                    events: [
+                        ['Classes Begin', 'January 15, 2023'],
+                        ['Midterm Exams', 'March 10-20, 2023'],
+                        ['Classes End', 'May 5, 2023'],
+                        ['Final Exams', 'May 15-30, 2023'],
+                        ['Result Publication', 'June 30, 2023']
+                    ]
+                },
+                'summer': {
+                    title: 'Summer 2023 Semester Calendar',
+                    events: [
+                        ['Classes Begin', 'June 15, 2023'],
+                        ['Midterm Exams', 'July 20-25, 2023'],
+                        ['Classes End', 'August 30, 2023'],
+                        ['Final Exams', 'September 5-15, 2023'],
+                        ['Result Publication', 'October 10, 2023']
+                    ]
+                }
+            };
+            
+            if (calendars[semester]) {
+                title.textContent = calendars[semester].title;
+                table.innerHTML = calendars[semester].events.map(event => `
+                    <tr>
+                        <td>${event[0]}</td>
+                        <td>${event[1]}</td>
+                    </tr>
+                `).join('');
+                detailsDiv.style.display = 'block';
+                showNotification(`Showing ${semester} 2023 calendar`, 'info');
+            }
+        }
+
+        function handleFileUpload(e) {
+            const file = e.target.files[0];
+            const statusDiv = document.getElementById('uploadStatus');
+            
+            if (file) {
+                const fileType = e.target.id.includes('photo') ? 'Photo' : 'Marksheet';
+                statusDiv.innerHTML = `
+                    <div style="color: green;">
+                        <i class="fas fa-check-circle"></i> ${fileType} uploaded successfully: ${file.name}
+                    </div>
+                `;
+                showNotification(`${fileType} uploaded: ${file.name}`, 'success');
+            }
+        }
+
+        function showStepDetails(step) {
+            const stepDetails = [
+                'Complete the online application form with accurate information.',
+                'Upload scanned copies of required documents (Photo, Marksheet, etc.).',
+                'Pay the application fee through online banking or mobile banking.',
+                'Download and print your admit card from the portal.',
+                'Appear for the admission test at the scheduled time and venue.'
+            ];
+            
+            showNotification(`Step ${step}: ${stepDetails[step-1]}`, 'info');
+        }
+
+        function showContactInfo(type) {
+            const info = {
+                'address': 'BRUR Campus, Rangpur 5400',
+                'phone': '+880 521-62730',
+                'email': 'info@brur.ac.bd',
+                'website': 'www.brur.ac.bd',
+                'hours': 'Sun-Thu: 9 AM - 5 PM'
+            };
+            
+            showNotification(`${type.charAt(0).toUpperCase() + type.slice(1)}: ${info[type]}`, 'info');
+        }
+
+        function showSocialLink(platform) {
+            const platforms = {
+                'facebook': 'Facebook Page',
+                'twitter': 'Twitter Account',
+                'youtube': 'YouTube Channel',
+                'linkedin': 'LinkedIn Profile',
+                'instagram': 'Instagram Account'
+            };
+            
+            showNotification(`Opening BRUR ${platforms[platform]}...`, 'info');
+        }
+
+        function openExternalLink(link) {
+            const links = {
+                'ugc': 'University Grants Commission',
+                'education': 'Ministry of Education',
+                'nu': 'National University',
+                'bren': 'Bangladesh Research Network',
+                'digital': 'Digital Bangladesh'
+            };
+            
+            showNotification(`Redirecting to ${links[link]} website...`, 'info');
+        }
+
+        function showFeedbackForm() {
+            const feedback = prompt('Please share your feedback about BRUR website:');
+            if (feedback) {
+                showNotification('Thank you for your valuable feedback!', 'success');
+            }
+        }
+
+        function printNews() {
+            showNotification('Printing news article...', 'info');
+            // In real implementation, this would trigger print dialog
+        }
+
+        function shareEvent() {
+            showNotification('Sharing event details...', 'info');
+            // In real implementation, this would trigger native sharing
+        }
+
+        // ====================
+        // LIVE UPDATES
+        // ====================
+        function startLiveUpdates() {
+            // Update visitor count every 30 seconds
+            setInterval(() => {
+                visitorCount += Math.floor(Math.random() * 10);
+                elements.visitorCount.textContent = formatNumber(visitorCount);
+            }, 30000);
+            
+            // Simulate live notifications
+            setInterval(() => {
+                const messages = [
+                    'New research paper published by Faculty of Science',
+                    'Admission test results will be published tomorrow',
+                    'Campus wifi upgraded to 5G speed',
+                    'Library extended hours during finals week'
+                ];
+                
+                const randomMsg = messages[Math.floor(Math.random() * messages.length)];
+                showNotification(randomMsg, 'info');
+            }, 60000);
+        }
+
+        function refreshLiveUpdates() {
+            const updatesDiv = document.getElementById('liveUpdates');
+            const newUpdate = document.createElement('div');
+            newUpdate.className = 'alert';
+            newUpdate.style.backgroundColor = '#d1ecf1';
+            newUpdate.style.borderLeft = '4px solid #17a2b8';
+            newUpdate.innerHTML = `<strong><i class="fas fa-bullhorn"></i> Live Update:</strong> New scholarships announced for meritorious students`;
+            
+            updatesDiv.prepend(newUpdate);
+            showNotification('Live updates refreshed!', 'success');
+        }
+
+        function loadMoreNews() {
+            const newsContainer = document.querySelector('.news-container');
+            const newNews = document.createElement('div');
+            newNews.className = 'news-card';
+            newNews.onclick = () => showNewsDetails(1);
+            newNews.innerHTML = `
+                <div class="news-date">Just Now</div>
+                <div class="news-content">
+                    <h3>New Scholarships Announced</h3>
+                    <p>University announces 50 new scholarships for deserving students.</p>
+                    <div class="read-more">Read More <i class="fas fa-arrow-right"></i></div>
+                </div>
+            `;
+            
+            newsContainer.appendChild(newNews);
+            showNotification('Loaded more news articles!', 'success');
+        }
+
+        function initializeTooltips() {
+            // Add tooltips to buttons
+            const tooltipElements = document.querySelectorAll('[data-tooltip]');
+            tooltipElements.forEach(el => {
+                el.addEventListener('mouseenter', function() {
+                    const tooltip = document.createElement('div');
+                    tooltip.className = 'tooltip';
+                    tooltip.textContent = this.getAttribute('data-tooltip');
+                    document.body.appendChild(tooltip);
+                    
+                    const rect = this.getBoundingClientRect();
+                    tooltip.style.position = 'absolute';
+                    tooltip.style.top = (rect.top - 35) + 'px';
+                    tooltip.style.left = (rect.left + rect.width/2) + 'px';
+                    tooltip.style.transform = 'translateX(-50%)';
+                    tooltip.style.backgroundColor = 'var(--dark-color)';
+                    tooltip.style.color = 'white';
+                    tooltip.style.padding = '5px 10px';
+                    tooltip.style.borderRadius = '4px';
+                    tooltip.style.fontSize = '12px';
+                    tooltip.style.zIndex = '10000';
+                    
+                    this._tooltip = tooltip;
+                });
+                
+                el.addEventListener('mouseleave', function() {
+                    if (this._tooltip) {
+                        document.body.removeChild(this._tooltip);
+                        delete this._tooltip;
+                    }
+                });
+            });
+        }
+
+        function handleKeyboardShortcuts(e) {
+            // Ctrl + / for search
+            if (e.ctrlKey && e.key === '/') {
+                e.preventDefault();
+                openSearch();
+            }
+            
+            // Escape to close modals/search
+            if (e.key === 'Escape') {
+                closeSearch();
+                document.querySelectorAll('.modal.active').forEach(modal => {
+                    modal.classList.remove('active');
+                });
+            }
+            
+            // Number keys for quick navigation (1-8)
+            if (e.key >= '1' && e.key <= '8' && !e.ctrlKey) {
+                const sections = ['home', 'about', 'faculties', 'academics', 'admission', 'research', 'news', 'contact'];
+                const index = parseInt(e.key) - 1;
+                if (index < sections.length) {
+                    switchSection(sections[index]);
+                }
+            }
+        }
+
+        // ====================
+        // GLOBAL FUNCTIONS (for onclick attributes)
+        // ====================
+        window.showFacultyModal = showFacultyModal;
+        window.showNewsDetails = showNewsDetails;
+        window.showEventDetails = showEventDetails;
+        window.showResearchDetails = showResearchDetails;
+        window.showStepDetails = showStepDetails;
+        window.showContactInfo = showContactInfo;
+        window.showSocialLink = showSocialLink;
+        window.openExternalLink = openExternalLink;
+        window.showFeedbackForm = showFeedbackForm;
+        window.printNews = printNews;
+        window.shareEvent = shareEvent;
+        window.startTour = startTour;
+        window.simulateCall = simulateCall;
+        window.openModal = openModal;
+        window.closeModal = closeModal;
+        window.callEmergency = simulateCall;
+    </script>
+</body>
+</html>
